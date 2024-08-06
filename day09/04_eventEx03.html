@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        가격 : <input type="text" id= "a">원 <br>
+        할인율 : <input type="text" id= "b">% <br>
+        <button type="button" onclick="clickbutton()">할인 가격 계산</button> <br>
+    </form>
+
+    <div id="div"></div>
+
+    <script>
+        let a = document.getElementById('a');
+        let b = document.getElementById('b');
+
+        function clickbutton(){
+            let A = Number(a.value);
+            let B = Number(b.value);
+            let C = A*(B/100);
+            let D = A - C;
+ 
+            let str = `가격 : ${A}, `;
+            str += `할인율 : ${B}, `;
+            str += `할인금액 : ${C}, `;
+            str += `지불금액 : ${D}`;
+
+            div.innerText = str;
+        }
+    </script>
+</body>
+</html>

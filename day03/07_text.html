@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+    text 속성
+    - text-align : 정렬 left, right, center, justify(양쪽)
+    - text-indent : 들여쓰기
+    - text-decoration : 선긋기
+        none : 없음.
+        underline : 밑줄
+        overline : 윗줄
+        line-through : 가운데줄
+    - text-shadow : 글자 그림자
+        - 좌측px 상단px 번짐정도 px 색상
+        - 중첩가능(멀티가능), (,)콤마로 계속 이어나갈 수 있음.
+    - letter-spacing : 글자간 간격
+    - word-spacing : 단어간 간격
+    - line-height : 글자 기준 높이
+    ----------- 많이 사용함 -------------
+    - white-space : 컨텐츠를 감싸는 방법
+        - wrap : 여러 줄 만들기
+        - no wrap : 한 줄로 처리
+    - text-overflow : 텍스트가 범위를 넘어가는 경우 처리
+        - ellipsis : 넘어가는 부분의 단위를 ...으로 처리
+    - overflow : 요소가 넘어가면 어떻게 처리할 지 결정
+        - hidden : 숨김
+        - scroll : 스크롤바 생성
+        - auto : 스크롤 오토 생성
+    -->
+    <!-- 
+    css 표준단위
+    px : 픽셀
+    % : 퍼센트 현재 값을 기준으로 %
+    em : 배수, 부모값을 기준으로 배수
+    rem : 배수, 문서의 값을 기준으로 배수
+    cm / mm / in => 각 단위
+    pt : 포인터 1pt => 1/72in
+    pc : 피카소 1pc => 12pt
+    deg : 각도
+    -->
+    <style>
+        p{
+            text-indent: 20px;
+            text-align: justify;
+            /* word-spacing: 20px;
+            letter-spacing: 5px; */
+        }
+        .line{
+            width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. 
+    </p>
+    <p class="line">
+        Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
+    </p>
+</body>
+</html>

@@ -1,0 +1,286 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+.wrap{
+    width: 100%;
+    min-width: 1200px;
+}
+.inner{
+    width: 1170px;
+    margin: auto;
+    box-sizing: border-box;
+}
+/* hearder */
+header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+}
+header>.inner{
+    position: relative;
+    height: 115px;
+}
+header>.inner>h1{
+    position: absolute;
+    margin-top: 15px;
+    left: 0;
+}
+header>.inner>.top-menu{
+    display: flex;
+    justify-content: end;
+}
+header>.inner>.top-menu>li{
+    position: relative;
+    padding: 10px 20px;
+}
+header>.inner>.nav>ul{
+    display: flex;
+    justify-content: center;
+    height: 79px;
+}
+header>.inner>.nav>ul>li{
+    margin: 0 40px;
+}
+header>.inner>.nav>ul>li>a{
+    font-size: large;
+    font-weight: 700;
+    line-height: 79px;
+}
+header>.inner>.nav>ul>li>a:hover{
+    color: green;
+}
+.bold{
+    font-weight: 700;
+    color: gray;
+}
+header>.inner .bold:hover{
+    color: black;
+    font-weight: 700;
+}
+.before::before{
+    content: " ";
+    background-color: gray;
+    width: 1px;
+    height: 13px;
+    position: absolute;
+    top: 35%;
+    left: 0;
+}
+/* main-image */
+section{
+    width: 100%;
+    height: 725px;
+    background-image: url(img/202005111050316900.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section>ul{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.con1>.inner{
+    width: 100%;
+    height: 31px;
+    background-color: white;
+    margin-top: 30px;
+}
+.con1>.inner>a>ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con1>.inner>a>ul>li{
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding: 0 15px;
+    line-height: 40px;
+    position: relative;
+    color: black;
+}
+.con1>.inner .time{
+    font-weight: 700;
+}
+.con1>.inner .line::before{
+    content: " ";
+    background-color: gray;
+    width: 1px;
+    height: 18px;
+    position: absolute;
+    top: 35%;
+    left: 0;
+}
+.con1>.inner img{
+    margin-top: 10px;
+}
+/* 상설전시 특별전시 */
+.con2>.inner{
+    width: 100%;
+    height: 100%;
+    background-image: url(../민속박물관/img/mainCon1_bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+}
+.con2>.inner>.image{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+.con2>.inner .text{
+    color: white;
+    text-align: center;
+}
+.con2>.inner .main{
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 50%;
+    padding-top: 100px;
+}
+.con2>.inner .sub{
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 50%;
+    margin: 50px;
+}
+.con2>.inner>.image>li{
+    transition: 0.5s;
+}
+.con2>.inner>.image>li:hover{
+    border: 1px solid white;
+}
+.con2>.inner>.image>li>a>p{
+    color: white;
+    text-align: center;
+    margin: 25px;
+    font-size: 25px;
+    font-weight: 700;
+}
+/* 다양한 프로그램 */
+.con3>.inner{
+    width: 100%;
+    background-image: url(../민속박물관/img/mainCon2_bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.con3>.inner>ul .text{
+    color: black;
+    text-align: center;
+}
+.con3>.inner>ul .main{
+    font-size: 40px;
+    font-weight: 300;
+    padding-top: 150px;
+}
+.con3>.inner>ul .sub{
+    font-size: 18px;
+    font-weight: 300;
+    padding: 30px 0 60px 0;
+    color: gray;
+}
+.con3>.inner>.image{
+    display: flex;
+    justify-content: center;
+}
+.con3>.inner>.image>li{
+    padding: 20px;
+}
+.con3>.inner>.image>li>a>p{
+    text-align: center;
+}
+.con3>.inner>.image>li>a .subject{
+    padding: 30px;
+    background-color: white;
+    font-size: 20px;
+    font-weight:bold;
+}
+.con3>.inner>.image>li:hover a p{
+    color: white;
+    background-color: green;
+    box-shadow: 15px 15px 20px gray;
+}
+/* 박물관 소식 */
+.con4>.inner{
+    width: 100%;
+    height: 100%;
+    background-color: skyblue;
+}
+.con4>.inner>ul .text{
+    color: black;
+    text-align: center;
+}
+.con4>.inner>ul .main{
+    font-size: 40px;
+    font-weight: 300;
+    padding-top: 150px;
+}
+.con4>.inner>ul .sub{
+    font-size: 18px;
+    font-weight: 300;
+    padding: 30px 0 60px 0;
+}
+.con4>.inner>.box{
+    display: flex;
+    justify-content: center;
+}
+.con4>.inner>.box>ul{
+    width: 30%;
+    border: 1px solid black;
+}
+

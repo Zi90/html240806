@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Kalnia+Glaze:wght@100..700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <!-- 
+    box의 속성
+    width : 가로 길이
+    height : 세로 길이
+    margin : box의 바깥여백
+    padding : box의 안쪽여백
+    box-sizing : box의 크기를 지정하는 속성
+    box-sizing에 따라 width가 컨텐츠의 크기가 될 수도 있고, 박스 전체의 크기가 될 수도 있음.
+
+    - border-box => width = 컨텐츠의 가로 + padding + border
+    - content-box => width = 컨텐츠의 가로
+    
+    width = 100px   padding = 5px   border = 1px (left + right)
+    border-box = (padding)5 + 5 + 1 + 1 + 88 =100px => 많이 사용함
+    content-box = (padding)5 + 5 + 1 + 1 + 100 =112px
+    -->
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            background-color: aquamarine;
+            box-sizing: border-box;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            background-color: aquamarine;
+            box-sizing: content-box;
+        }
+        .box2{
+            margin-top: 50px;
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+            font-style: normal;
+            background-color: green;
+            color: white;
+            width: 150px;
+            text-align: center;
+            border-radius: 50px;
+        }
+        a{
+           text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <!-- box2를 클릭하면 naver로 이동하는 버튼(div)을 생성 -->
+    <div class="box2"><a href="http://www.naver.com" target="_blank">naver</a></div>
+</body>
+</html>

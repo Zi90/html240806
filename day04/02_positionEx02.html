@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pbox{
+            position: relative;
+            width: 100%;
+            height: 50px;
+        }
+        .box{
+            position: absolute;
+            width: calc(100% / 4);
+            height: 50px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 50px;
+            color: black;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .box:hover{
+            background-color: yellowgreen;
+        }
+        .box2{
+            border-left: none;
+            border-right: none;
+            left: 25%
+        }
+        .box3{
+            border-right: none;
+            left: 50%  
+        }
+        .box4{
+            left: 75%
+        }
+    </style>
+</head>
+<body>
+    <div class="pbox">
+        <a href=""><div class="box box1"><b>menu1</b></div></a>
+        <a href=""><div class="box box2"><b>menu2</b></div></a>
+        <a href=""><div class="box box3"><b>menu3</b></div></a>
+        <a href=""><div class="box box4"><b>menu4</b></div></a>
+    </div>
+</body>
+</html>

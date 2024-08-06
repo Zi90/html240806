@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 과제 -->
+     <style>
+        input.name{
+            background-color: rgb(211, 79, 105);
+        }
+        input.pass{
+            background-color: rgb(130, 155, 223);
+        }
+        input.password{
+            background-color: rgb(83, 206, 113);
+        }
+        input.email{
+            background-color: rgb(211, 79, 189);
+        }
+     </style>
+</head>
+<body>
+    <form action="">
+        <table border="1">
+            <caption><h3>회원가입</h3></caption>
+            <thead>
+                <tr>
+                    <th>
+                        아이디
+                    </th>
+                    <th>
+                        <input class = "name" type="text" name ="아이디">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        비밀번호
+                    </th>
+                    <th>
+                        <input class = "pass" type="password" name="비밀번호">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        비밀번호 확인
+                    </th>
+                    <th>
+                        <input class = "password" type="password" name="비밀번호 확인">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        이메일
+                    </th>
+                    <th>
+                        <input class = "email" type="email" name="이메일">
+                    </th>
+                </tr>
+                <th>
+                    성별
+                </th>
+                <th>
+                    <input type="radio" name="성별" id="남자"><label for = "남자">남자</label>
+                    <input type="radio" name="성별" id="여자"><label for = "여자">여자</label>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    전화번호
+                </th>
+                <th>
+                    <input type="number" name="010">-<input type="number" name="1234">-<input type="number" name="5678">
+                </th>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">
+                    <button type="submit" name="회원가입">회원가입</button> 
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</form>
+</body>
+</html>

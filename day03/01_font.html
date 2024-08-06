@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 
+    font 속성
+    - font-size : 글자 크기
+    - font-weight : 굵기 100 ~ 900 100단위 (보통 700)
+    - font_family : 글꼴
+        - 지정하려는 폰트를 ,로 나열
+        - 한글 폰트를 지정시 한글 이름, 영문 이름을 같이 지정
+        - "맑은 고딕", "Malgun Gothic", 굴림, Guim, serif(폰트 기본값)
+        - 기본 폰트, 다른 폰트, 기본형
+        - 마지막은 항상 기본형을 지정
+        - 폰트명을 띄어쓰기 없이 지정. 띄어쓰기가 있다면 "" 묶어 설정
+    - font-style : italic(기울림꼴)
+    -->
+        <style>
+            .font{
+                font-size: 50px;
+                font-family: "Nanum Pen Script", cursive;
+                font-weight: 900;
+                font-style: normal;
+            }
+            .font2{
+                font-size: 50px;
+                font-family: "Kalnia Glaze", serif;
+                font-optical-sizing: auto;
+                font-weight: 900;
+                font-style: normal;
+                font-variation-settings:
+                "wdth" 100;
+            }
+        </style>
+</body>
+    <p class = "font">안녕하세요</p>    
+    <p class = "font2">Magnetic</p>    
+</html>

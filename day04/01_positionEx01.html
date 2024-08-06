@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pbox{
+            width: 100%;
+            height: 150px;
+            background-color: beige;
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 25px;
+    
+        }
+        .box:nth-child(1){
+            background-color: aqua;
+            left: 25px;
+        }
+        .box:nth-child(2){
+            background-color: gold;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .box:nth-child(3){
+            background-color: chocolate;
+            right: 25px;
+        }
+        .pbox1{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: violet;
+        }
+        .boxx{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="pbox">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="pbox1">
+        <div class="boxx"></div>
+    </div>
+</body>
+</html>

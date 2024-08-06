@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pbox{
+            width: 500px;
+            /* border: 1px solid black; */
+        }
+        .pbox2{
+            width: 500px;
+            /* border: 1px solid black; */
+        }
+        .box{
+            width: calc(100% / 3);
+            height: 300px;
+            float: left;
+        }
+        .boxx{
+            width: calc(200% / 3);
+            height: 300px;
+            float: left;
+        }
+        .pbox::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .box1{
+            background-color: aqua;
+        }
+        .box2{
+            background-color: burlywood;
+        }
+        .box3{
+            background-color: brown;
+        }
+        .box4{
+            background-color: blanchedalmond;
+        }
+        .box5{
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class ="pbox">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+    <div class="pbox2">
+        <div class="box box4"></div>
+        <div class="boxx box5"></div>
+    </div>
+</body>
+</html>

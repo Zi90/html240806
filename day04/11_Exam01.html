@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 과제 -->
+     <style>
+        body{
+            background-color: rgb(73, 167, 135);
+        }
+        .login-box{
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(99, 194, 170);
+            border-radius: 10px;
+        }
+        .login-id{
+            width: 450px;
+            height: 50px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 30px 25px 5px 25px;
+            float: left;
+        }
+        .login-id>input{
+            width: 430px;
+            height: 30px;
+            margin: 10px 10px;
+            color: rgb(167, 167, 167);
+            border: none;
+            outline: none;
+        }
+        .login-password{
+            width: 450px;
+            height: 50px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 10px 25px 5px 25px;
+            float: left;
+        }
+        .login-password>input{
+            width: 430px;
+            height: 30px;
+            margin: 10px 10px;
+            color: rgb(167, 167, 167);
+            border: none;
+            outline: none;
+        }
+        .login{
+            width: 450px;
+            height: 50px;
+            background-color: rgb(46, 117, 90);
+            color: white;
+            border-radius: 10px;
+            margin: 10px 25px 0px 25px;
+            float: left;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 50px; 
+        }
+        .password-find{
+            width: 450px;
+            height: 30px;
+            text-align: center;
+            margin-left: 25px;
+            margin-top: 30px;
+            color: rgb(77, 37, 77);
+            float: left;
+        }
+        .password-find>a{
+            text-decoration: none;
+        }
+     </style>
+</head>
+<body>
+        <form action="">
+        <div class="login-box">
+            <div class="login-id">
+                <input type="text" name="id" placeholder="아이디"></div>
+            <div class="login-password">
+                <input type="password" name="password" placeholder="비밀번호"></div>
+            <button class="login" type="button">
+                <b>로그인</b></button>
+            <div class="password-find"><a href=""><small>비밀번호를 잊어버리셨나요?</small></a></div>
+        </div>
+    </form>
+</body>
+</html>
