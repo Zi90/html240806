@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>성적 확인</legend>
+            이름 : <input type="text" id="name"><br>
+            국어 : <input type="text" id="kor"><br>
+            영어 : <input type="text" id="eng"><br>
+            수학 : <input type="text" id="math"><br>
+            <button type="button" id="btn">성적 계산</button>
+        </fieldset>
+    </form>
+    <h3 id="result"></h3>
+    <script>
+        // 이름, 국어, 영어, 수학 점수를 입력받아 합계, 평균, 합격 여부를 출력
+        // 합격 여부는 평균이 60이상이면 pass / fail
+
+        // 입력값의 범위가 0 ~ 100 사이의 점수가 아니면 alert 창을 띄어 안내
+        document.getElementById('btn').addEventListener('click', ()=>{
+            let name = document.getElementById('name').value;
+            let kor = Number(document.getElementById('kor').value);
+            let eng = Number(document.getElementById('eng').value);
+            let math = Number(document.getElementById('math').value);
+
+            // 점수 범위 제한
+            if((kor >= 0 && kor <= 100) && (eng >= 0 && eng <= 100) && (math >= 0 && math <= 100)){
+                let sum = kor + eng + math;
+                let avg = sum / 3;
+
+                // 합격, 불합격
+                let pass = ' ';
+                if(avg >= 60){
+                    pass = 'pass';
+                } else{
+                    pass = 'fail';
+                }
+
+                // 출력
+                const result = document.getElementById('result');
+                let str = `이름 : ${name}, `;
+                str += `국어 : ${kor}, `;
+                str += `영어 : ${eng}, `;
+                str += `수학 : ${math}, `;
+                str += `합계 : ${sum}, `;
+                str += `평균 : ${avg}, `;
+                str += `합격여부 : ${pass}`;
+
+                result.innerHTML = str;
+
+            }else{
+                alert('점수를 잘못 입력하셨습니다(범위: 0 ~ 100)');
+            }
+        })
+    </script>
+</body>
+</html>

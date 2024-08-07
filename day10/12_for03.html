@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table tr, td{
+            border: 1px solid black;
+            text-align:  center;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        테이블 추가
+        2 * 1 = 2  3 * 1 = 3  4 * 1 = 4 ... 9 * 1 = 9
+        2 * 2 = 4  3 * 2 = 6  4 * 2 = 8 ... 9 * 2 = 18
+        ...
+        incre = 1 => tr 하나 생성
+        for dan = 2 ~ 9 반복 td 생성
+        incre = 2 => tr 하나 생성
+        for dan = 2 ~ 9 반복 td 생성
+        
+    -->
+    <button type="button" id="btn">구구단 출력</button>
+    <table id="gugu"></table>
+    <script>
+        let incre = 1;    // 뒤에 꺼
+        let str = '';
+        let dan = 2;      // 앞에 꺼
+        document.getElementById('btn').addEventListener('click', ()=>{
+            const gugu = document.getElementById('gugu');
+            while(incre <= 9){            
+                str += `<tr><td>${dan} * ${incre} = ${dan * incre}</td>`;
+                for(i = 3; i <= 9; i++){                 
+                    str += `<td>${i} * ${incre} = ${i * incre}</td>`;
+                }
+                str += '</tr>'
+                incre ++;
+            }
+            gugu.innerHTML = str;
+        })
+    </script>
+</body>
+</html>

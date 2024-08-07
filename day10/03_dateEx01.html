@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        이름 : <input type="text" id="name"><br>
+        주민번호 : <input type="text" id="num"><br>
+        <button type="button" id="btn">확인</button>
+    </form>
+
+    <h3 id="h3"></h3>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', ()=>{
+            let name = document.getElementById('name').value;        // 이름
+            let num = document.getElementById('num').value;
+            let birth = num.substring(0, num.indexOf('-'));        // 생년월일
+            let age = num.substring(0, 2);
+            let year = num.charAt(num.indexOf('-')+1);
+            let gender = (year == 1 || year == 3) ? '남' : '여';     // 성별
+            let Year = (year == 1 || year == 2) ? 1900 : 2000;
+            let today = new Date();
+
+            let result = Number(today.getFullYear()) - Year + Number(age);  // 나이 error
+
+            let h3 = document.getElementById('h3');
+
+            let str = `이름: ${name}, `;
+            str += `생년월일: ${birth}, `;
+            str += `나이: ${result}, `;
+            str += `성별: ${gender}`;
+
+            h3.innerText = str;
+
+        })
+    </script>
+</body>
+</html>
