@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 105px;
+            text-align: center;
+            color: transparent;
+            background: linear-gradient(black, violet, black);
+            -webkit-background-clip: text;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            font-size: 30px;
+            border-radius: 5px;
+        }
+        .red{
+            color: pink;
+            border: 3px solid pink;
+            background: linear-gradient(pink, skyblue, pink);
+        }
+        .blue{
+            color: skyblue;
+            border: 3px solid skyblue;
+            background: linear-gradient(skyblue, pink, skyblue);
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        button 2개 + / -
+        + => 값이 1씩 증가
+        - => 값이 1씩 감소(값이 0이 되면 감소 X)
+    -->
+    <h1 id="number"></h1>
+    <button id="incre" class="red">+</button>
+    <button id="decre" class="blue">-</button>
+    
+    <script>
+        let number = document.getElementById('number');
+        let n = 0;
+        number.innerHTML = n;
+        
+        document.getElementById('incre').addEventListener('click', ()=>{
+            n ++;
+            number.innerHTML = n;
+        });
+        
+        document.getElementById('decre').addEventListener('click', ()=>{
+            if(n != 0){
+                n --;
+                number.innerHTML = n;
+            }
+        });
+    </script>
+</body>
+</html>

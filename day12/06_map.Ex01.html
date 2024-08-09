@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input 2개 생성 => 과목, 점수 입력
+        map에 추가
+        출력 => map -> ul => li 형태로 출력
+        결과 => 합계, 평균, 합격 여부(평균 60점이상 합격) => h3 출력
+        0 ~ 100사이의 점수
+    -->
+        과목: <input type="text" id="subject"><br>
+        점수: <input type="text" id="score"><br>
+        <button type="button" id="add">추가</button>
+        <button type="button" id="result">결과</button>
+        <h3 id="print"></h3>
+        <script>
+            let print = document.getElementById('print');
+            let subject = '';
+            let score = 0;
+            let str = ``;
+            let count = 0;
+            let sum = 0;
+            let avg = 0;
+            const myMap = new Map();
+            
+            document.getElementById('add').addEventListener('click', ()=>{
+                subject = document.getElementById('subject').value;
+                score = Number(document.getElementById('score').value);
+                str = ``;
+                if(score >= 0 && score <= 100){
+                    myMap.set(subject, score);
+                    myMap.forEach(function(v,i,s){
+                        str += `<li> ${i} : ${v}</li>`;
+                    });
+                    count ++;
+                    sum += score;
+                    avg = sum / count;
+                    print.innerHTML = str;
+                }else{
+                    alert('다시 입력해주세요');
+                }
+            });
+            document.getElementById('result').addEventListener('click', ()=>{
+                str += `<br> 합계: ${sum} / 평균: ${avg.toFixed(2)} / `;
+                if(avg >= 60){
+                    str += `합격 여부: pass`;
+                }else{
+                    str += `합격 여부: fail`;
+                }
+                print.innerHTML = str;
+                str = ``;
+            });
+        </script>
+</body>
+</html>

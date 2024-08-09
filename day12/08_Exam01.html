@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        set을 이용한 로또 생성
+        1등 6개, 2등 5개 + 보너스 1개, 3등 5개, 4등 4개, 5등 3개, 꽝
+    -->
+    <h1>1~45 로또</h1>
+    <button id="ranCom">랜덤번호 6자리 생성</button>
+    <h3 id="printCom"></h3> 
+    <button id="ranPlayer">당첨번호 7자리 생성</button> 
+    <h3 id="printPlayer"></h3> 
+    <button id="result">결과 확인</button> 
+    <h3 id="printResult"></h3> 
+    <script>
+        const printCom = document.getElementById('printCom');
+        const printPlayer = document.getElementById('printPlayer');
+        const printResult = document.getElementById('printResult');
+        const arrayCom = [];
+        const arrayPlayer = [];
+        let count = 0;
+        let bonus = 0;
+        let last = 0;
+        let str = ``;
+        
+        document.getElementById('ranCom').addEventListener('click', ()=>{
+            str = ``;
+            const setCom = new Set([]);
+            while(setCom.size <= 5){
+                setCom.add(Math.floor(Math.random()*45)+1);
+            }
+            setCom.forEach(function(v, i, s){
+                str += `${v} `;
+                arrayCom.push(v);
+            });
+            printCom.innerHTML = str;
+        });
+        
+        document.getElementById('ranPlayer').addEventListener('click', ()=>{
+            str = ``;
+            const setPlayer = new Set([]);
+            while(setPlayer.size <= 6){
+                setPlayer.add(Math.floor(Math.random()*45)+1);
+            }
+            setPlayer.forEach(function(v, i, s){              //array에 요소를 push
+                arrayPlayer.push(v);
+            });
+            last = arrayPlayer.pop();   // Player의 7번째 요소를 담음.
+            arrayPlayer.forEach(function(v,i,s){                        // bonus를 제거한 array를 출력
+                str += `${v} `;
+            });
+            str += `[${last}]`;
+            printPlayer.innerHTML = str;
+        });
+
+        document.getElementById('result').addEventListener('click', ()=>{
+            for(let i = 0; i <= arrayCom.length - 1; i++){
+                if(arrayCom.includes(arrayPlayer[i])){
+                    count ++;
+                }else if(arrayCom.includes(last)){
+                    bonus ++;
+                }
+            }
+            str = '';
+            if(count == 6){
+                str += '1등!';
+            }else if(count == 5 && bonus == 1){
+                str += '2등!!';
+            }else if(count == 5){
+                str += '3등!!!';
+            }else if(count == 4){
+                str += '4등~';
+            }else if(count == 3){
+                str += '5등~~';
+            }else{
+                str += '꽝 :)'
+            }
+            arrayPlayer.splice(0,6);              // 당첨 번호 array 요소 제거
+            printResult.innerHTML = str;
+        });
+    </script>
+</body>
+</html>
