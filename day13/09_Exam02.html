@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calculator{
+            width: 220px;
+            height: 310px;
+            background: linear-gradient(skyblue, pink);
+        }
+        input{
+            width: 210px;
+            height: 50px;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+        }
+        button:hover{
+            background-color: palegreen;
+        }
+        .clear{
+            width: 161px;
+            background-color: pink;
+        }
+        .operator{
+            background-color: skyblue;
+        }
+        .result{
+            width: 105px;
+        }
+        .dot{
+            background-color: palegoldenrod;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <form action="" name="froms">
+            <input type="text" id="output"><br>
+            <button type="button" class="clear" value="c">c</button>
+            <button type="button" class="operator" value="/">/</button><br>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" class="operator" value="*">*</button><br>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" class="operator" value="+">+</button><br>
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" class="operator" value="-">-</button><br>
+            <button type="button" class="dot" value=".">.</button>
+            <button type="button" value="0">0</button>
+            <button type="button" class="operator result" value="=">=</button><br>
+        </form>
+    </div>
+    <script>
+        document.querySelector('.calculator').addEventListener('click', (e)=>{
+            // console.log(e.target);  // 내가 선택한 객체
+            // console.log(e.target.value); // 내가 선택한 객체의 value 값
+            // console.log(typeof e.target.value);
+            // eval 함수 : 절대 사용하면 안 됨.
+
+            let cnt = 0;
+            let op = '';
+            let result = 0;
+            let output = document.getElementById('output');
+            if((e.target.value != '+') || (e.target.value != '-') || (e.target.value != '*') || (e.target.value != '/') || (e.target.value != '=') || (e.target.value != 'c') || (e.target.value != '.')){
+                cnt ++;
+                if(cnt == 1){
+                    let Num1 = Number(e.target.value);
+                    output.innerText = Num1;
+                }else if(cnt == 2){
+                    let Num2 = Number(e.target.value);
+                    output.innerText = Num2;
+                }
+            }else if(e.target.value == '+'){
+                op = '+';
+                output.innerText = op;
+            }else if(e.target.value == '-'){
+                op = '-';
+                output.innerText = op;
+            }else if(e.target.value == '*'){
+                op = '*';
+                output.innerText = op;
+            }else if(e.target.value == '/'){
+                op = '/';
+                output.innerText = op;
+            }else if(e.target.value == '='){
+                result = `${Num1} ${op} ${Num2}`;
+                output.innerHTML = result;
+            }
+        });
+    </script>
+</body>
+</html>

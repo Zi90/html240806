@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>내가 좋아하는 가수</h1>
+    <form action="">
+        이름 : <input type="text" id="name"><br>
+        나이 : <input type="text" id="age"><br>
+        주소 : <input type="text" id="address"><br>
+        playList : <br>
+        <input type="text" id="first">
+        <input type="text" id="second">
+        <input type="text" id="third">
+        <button type="button" id="add">등록</button>
+    </form>
+    <script>
+        const people = [];
+        const musician1 = {
+            name : '',
+            age : 0,
+            address : '',
+            playList : {
+                first : '',
+                second : '',
+                third : '',
+            }
+        }
+        const musician2 = {
+            name : '',
+            age : 0,
+            address : '',
+            playList : {
+                first : '',
+                second : '',
+                third : '',
+            }
+        }
+        const musician3 = {
+            name : '',
+            age : 0,
+            address : '',
+            playList : {
+                first : '',
+                second : '',
+                third : '',
+            }
+        }
+
+        let cnt = 0;
+        // people에 객체를 3개 등록
+        document.getElementById('add').addEventListener('click', ()=>{
+            cnt ++;
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const address = document.getElementById('address').value;
+            const first = document.getElementById('first').value;
+            const second = document.getElementById('second').value;
+            const third = document.getElementById('third').value;
+
+            switch(cnt){
+                case 1:
+                    console.log('-- 등록 --');
+                    musician1.name = name;
+                    musician1.age = age;
+                    musician1.address = address;
+                    musician1.playList.first = first;
+                    musician1.playList.second = second;
+                    musician1.playList.third = third;
+                    console.log(musician1);
+                    people.push(musician1);
+                    break;
+                case 2:
+                    musician2.name = name;
+                    musician2.age = age;
+                    musician2.address = address;
+                    musician2.playList.first = first;
+                    musician2.playList.second = second;
+                    musician2.playList.third = third;
+                    console.log(musician1);
+                    people.push(musician2);
+                    break;
+                case 3:
+                    musician3.name = name;
+                    musician3.age = age;
+                    musician3.address = address;
+                    musician3.playList.first = first;
+                    musician3.playList.second = second;
+                    musician3.playList.third = third;
+                    console.log(musician1);
+                    people.push(musician3);
+                    // 3명의 데이터를 콘솔에 for문으로 순회 나열
+                    console.log("-- 배열 객체 --");
+                    for(let result of people){
+                        for(let keyName in result){
+                            if(keyName == 'playList'){
+                                console.log('-- playList --');
+                                // 다시 객체 안
+                                for(let key in result[keyName]){
+                                    console.log(result[keyName][key]);
+                                }
+                            }else{
+                                console.log(keyName + ' : ' + result[keyName]);
+                            }
+                        }
+                        console.log('----------');
+                    }
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
