@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        h1{
+            text-align: center;
+        }
+        .section{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 내 풀이과정 (망함) -->
+    <!-- https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json -->
+     <header id="header">
+     </header>
+     <section id="section"></section>
+     <script>
+        document.getElementById('header');
+        document.getElementById('section');
+
+        asyncFun().then(result => {
+            printData(result);
+        });
+
+        function printData(result){
+            let heaStr = '';
+            let secStr = '';
+            for(let keyName in result){
+                switch(keyName){
+                    case "squadName": 
+                        heaStr +=`<h1>${result[keyName]}</h1>`
+                        break;
+                    case "homeTown": 
+                        heaStr +=`<h3>${keyName} : ${result[keyName]}`
+                        break;
+                    case "formed": 
+                        heaStr +=` // ${keyName} : ${result[keyName]}</h3>`
+                        break;
+                    case "members":
+                        for(let memObject of result[keyName]){
+                            for(let mem in result[keyName][memObject]){
+                                if(mem == 'name'){
+                                    secStr += `<div>${result[keyName][memObject][mem]}</div>`;
+                                    console.log(result[keyName][memObject][mem]);
+                                }else if(mem == 'powers'){
+                                    for(let p of result[keyName][memObject][mem])
+                                    secStr += `<li>${p}</li>`;
+                                    console.log(p);
+                                }else{
+                                    secStr += `<div>${mem} : ${result[keyName][memObject][mem]}</div>`;
+                                    console.log(mem);
+                                }
+                            }
+                        }
+                        break;
+                    default: break;
+                }
+            }
+            header.innerHTML = heaStr;
+            section.innerHTML = secStr;
+        }
+
+        async function asyncFun(){
+            try{
+                const resp = await fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json');
+                const result = await resp.json();
+                return result;
+            }catch(error){
+                console.log(error);
+            }finally{
+                console.log("await fininsh");
+            }
+        }
+     </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">데이터 가져오기</button>
+    <ul id="ul"></ul>
+    <script>
+        //http://jsonplaceholder.typicode.com/todos/1 ~ 5번까지 5개의 데이터를 li로 출력
+        
+        let num = 0;
+        let str = '';
+        document.getElementById('btn').addEventListener('click', ()=>{
+            for(let i = 1; i <= 5; i++){
+                num ++;
+                asyncFun(num).then(result=>{
+                    console.log(num);
+                    // 여기서 처리
+                    printData(result);
+                });
+            }
+        });
+        
+        function printData(result){
+            document.getElementById('ul');
+            for(let key in result){
+                str += `<li>${key} : ${result[key]}</li>`;
+            }
+            ul.innerHTML = str;
+        }
+        
+        async function asyncFun(N){
+            try{
+                const resp = await fetch(`http://jsonplaceholder.typicode.com/todos/${N}`);
+                const result = await resp.json();
+                console.log(resp);
+                return result;
+            } catch (error){
+                console.log(error);
+            } finally{
+                console.log("await finish");
+            }
+        }
+    </script>
+</body>
+</html>
