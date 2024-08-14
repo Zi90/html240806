@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../day05/travel(과제)/Link.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Travel</h1>
+    <ul>
+        <li><a id="비행기" onclick="clickCity(this)">Home</a></li>
+        <li><a id="서울" onclick="clickCity(this)">Seoul</a></li>
+        <li><a id="도쿄" onclick="clickCity(this)">Tokyo</a></li>
+        <li><a id="파리" onclick="clickCity(this)">Paris</a></li>
+    </ul>
+    <img src="../image/비행기.jpg" alt="image" id="cityImg">
+    <script>
+        function clickCity(e){
+            event.preventDefault();
+            console.log(e);
+            console.log(e.id);
+            const cityImg = document.getElementById('cityImg');
+            cityImg.src =`../image/${e.id}.jpg`;
+        }
+    </script>
+</body>
+</html>

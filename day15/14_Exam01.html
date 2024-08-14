@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        form{
+            width: 500px;
+            height: 100px;
+            background-color: skyblue;
+        }
+        #item{
+            margin: 30px 0;
+            width: 300px;
+            height: 30px;
+        }
+        #add{
+            margin: 35px 0;
+            width: 60px;
+            height: 30px;
+        }
+        ul{
+            padding: 0;
+        }
+        li{
+            background: linear-gradient(#2193b0, #6dd5ed);
+            display: flex;
+            list-style-type: none;
+            text-align: left;
+            width: 500px;
+            color: white;
+        }
+        li>div{
+            width: 250px;
+            flex-direction: row;
+            padding: 10px;
+        }
+        li:nth-child(even){
+            background: linear-gradient(#373B44, #4286f4);
+        }
+        .del{
+            text-align: right;
+        }
+        .del:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wapper">
+        <h2>여행 준비물 점검 목록</h2>
+        <form action="">
+            <input type="text" id="item" autofocus="true">
+            <button type="button" id="add">추가</button>
+        </form>
+        <div>
+            <ul id="itemList"></ul>
+        </div>
+    </div>
+    <script>
+        let index = 0;
+        
+        document.getElementById('add').addEventListener('click', ()=>{
+            let item = document.getElementById('item').value;
+            document.getElementById('item').value = "";
+            let ul = document.getElementById('itemList');
+            ul.innerHTML += `<li id ="check_${index}"><div>${item}</div><div class="del" onclick="dlt(${index})">X</div></li>`;
+            index ++;
+        });
+
+        function dlt(n){
+            let box = document.getElementById("check_"+`${n}`);
+            box.remove();
+        }
+
+    </script>
+</body>
+</html>
